@@ -1,3 +1,44 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Book Demo'
+theme = 'hugo-book'
+
+# Needed for mermaid/katex shortcodes
+[markup]
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.tableOfContents]
+  startLevel = 1
+
+# Multi-lingual mode config
+# There are different options to translate files
+# See https://gohugo.io/content-management/multilingual/#translation-by-filename
+# And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
+[languages]
+[languages.en]
+  languageName = 'English'
+  contentDir = 'content/content.en'
+  weight = 1
+
+[languages.ru]
+  languageName = 'Russian'
+  contentDir = 'content/content.ru'
+  weight = 2
+
+[languages.zh]
+  languageName = 'Chinese'
+  contentDir = 'content.zh'
+  weight = 3
+
+[menu]
+# [[menu.before]]
+[[menu.after]]
+  name = "Github"
+  url = "https://github.com/alex-shpak/hugo-book"
+  weight = 10
+
+[[menu.after]]
+  name = "Hugo Themes"
+  url = "https://themes.gohugo.io/hugo-book/"
+  weight = 20
